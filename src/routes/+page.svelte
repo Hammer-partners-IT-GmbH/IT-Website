@@ -1,6 +1,19 @@
-<script>
+<script lang="ts">
 	import { faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
+
+	let choice_string: string = 'praxis';
+
+	function choice(type: string) {
+		choice_string = type;
+		const all_list = document.querySelectorAll('.auswahl ul li button');
+		all_list.forEach((element) => {
+			element.classList.remove('active');
+		});
+		const elemnt = document.getElementById(type);
+		elemnt?.classList.toggle('active');
+		return choice_string;
+	}
 </script>
 
 <div class="nav">
@@ -116,6 +129,26 @@
 			<li>Erstellung validierter Datensätze für die Übernahme in das neue EDV-System</li>
 		</ul>
 	</div>
+</div>
+
+<div class="auswahl">
+	<ul>
+		<li><button id="praxis" on:click={() => choice('praxis')}>Praxis</button></li>
+		<li><button id="krankenhaus" on:click={() => choice('krankenhaus')}>Krankenhaus</button></li>
+		<li>
+			<button id="nicht-medizinisch" on:click={() => choice('nicht-medizinisch')}
+				>Nicht Medizinisch</button
+			>
+		</li>
+	</ul>
+
+	{#if choice_string === 'praxis'}
+		<h2>PRAXIS</h2>
+	{:else if choice_string === 'krankenhaus'}
+		<h2>KRANKENHAUS</h2>
+	{:else if choice_string === 'nicht-medizinisch'}
+		<h2>NICHT MEDIZINISCH</h2>
+	{/if}
 </div>
 
 <div id="ansprechpartner" class="ansprechpartner">
@@ -406,6 +439,36 @@
 			}
 		}
 	}
+
+	.auswahl {
+		ul {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			list-style: none;
+
+			li {
+				flex-grow: 1;
+				margin-right: 1rem;
+
+				button {
+					background-color: #002b4d;
+					border: 1px solid #002b4d;
+					border-radius: 0.25rem;
+					color: #eff4f7;
+					cursor: pointer;
+					font-size: 1rem;
+					padding: 0.5rem 1rem;
+					width: 100%;
+				}
+
+				.active {
+					background-color: #eff4f7 !important;
+					color: #002b4d !important;
+				}
+			}
+		}
+}
 
 	.ansprechpartner {
 		.persons {
