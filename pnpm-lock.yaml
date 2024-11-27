@@ -52,8 +52,8 @@ importers:
         specifier: ^4.0.5
         version: 4.0.5(svelte@4.2.19)(typescript@5.5.4)
       svelte-preprocess:
-        specifier: ^6.0.2
-        version: 6.0.2(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.7)(svelte@4.2.19)(typescript@5.5.4)
+        specifier: ^6.0.3
+        version: 6.0.3(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.7)(svelte@4.2.19)(typescript@5.5.4)
       tslib:
         specifier: ^2.6.3
         version: 2.6.3
@@ -1152,8 +1152,8 @@ packages:
     peerDependencies:
       svelte: ^3.19.0 || ^4.0.0
 
-  svelte-preprocess@6.0.2:
-    resolution: {integrity: sha512-OvDTLfaOkkhjprbDKO0SOCkjNYuHy16dbD4SpqbIi6QiabOMHxRT4km5/dzbFFkmW1L0E2INF3MFltG2pgOyKQ==}
+  svelte-preprocess@6.0.3:
+    resolution: {integrity: sha512-PLG2k05qHdhmRG7zR/dyo5qKvakhm8IJ+hD2eFRQmMLHp7X3eJnjeupUtvuRpbNiF31RjVw45W+abDwHEmP5OA==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       '@babel/core': ^7.10.2
@@ -2331,7 +2331,7 @@ snapshots:
     dependencies:
       svelte: 4.2.19
 
-  svelte-preprocess@6.0.2(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.7)(svelte@4.2.19)(typescript@5.5.4):
+  svelte-preprocess@6.0.3(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.7)(svelte@4.2.19)(typescript@5.5.4):
     dependencies:
       svelte: 4.2.19
     optionalDependencies:
